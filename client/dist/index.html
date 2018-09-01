@@ -20,6 +20,24 @@
   <script src="leaflet.awesome-markers.js"></script>
   <!-- include google maps -->
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkOLyFT4w7U5-xwcy0MJfg3gz5EllDg-I&libraries=places"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript"  src="https://s3-us-west-1.amazonaws.com/knowhow-s3/widget.js?v=1"></script>
+   <script src="http://ec2-54-215-238-252.us-west-1.compute.amazonaws.com:5000/chat-service.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function() {
+
+       var login = $('#app .right span')[0].innerText;
+       if(login.length !== undefined) {
+         EmbeddableWidget.mount('JYNZPK8G38OeRV5D');
+         EmbeddableChatService.mount({
+           app_id : 'JYNZPK8G38OeRV5D',
+           name : $('#app .right span')[0].innerText
+         })
+       } else {
+         //EmbeddableChatService.mount();
+       }
+   });
+  </script>
 </head>
 <body>
   <div id="app"></div>
